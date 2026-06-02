@@ -151,7 +151,7 @@ const NeedsPage = () => {
               logistics and documentation.
             </p>
             <div className="flex justify-center gap-4">
-              <button className="bg-secondary text-white px-10 py-4 rounded-full font-bold hover:bg-secondary/90 transition-all">
+              <button onClick={() => { window.location.href = "/contact" }} className="bg-secondary hover:cursor-pointer text-white px-10 py-4 rounded-full font-bold hover:bg-secondary/90 transition-all">
                 Contact Us Now
               </button>
             </div>

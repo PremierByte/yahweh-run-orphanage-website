@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import {
   Building2,
@@ -121,7 +123,7 @@ const ProjectPage = () => {
               for their growth and development.
             </p>
             <div className="flex justify-center gap-4">
-              <button className="bg-primary text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-primary/90 transition-all">
+              <button onClick={() => { window.location.href = "/donate" }} className="bg-primary hover:cursor-pointer text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-primary/90 transition-all">
                 Support the Project
               </button>
             </div>

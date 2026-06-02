@@ -1,3 +1,5 @@
+'use client';
+
 const CTA = () => {
   return (
     <section className="py-20">
@@ -12,16 +14,22 @@ const CTA = () => {
             donation, sponsorship, or volunteering, you can make a difference.
           </p>
           <div className="flex flex-wrap justify-center gap-4 relative z-10">
-            <button className="bg-secondary text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-secondary/90 transition-all">
+            <button
+              onClick={() => { window.location.href = "/contact" }}
+              className="bg-secondary hover:cursor-pointer text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-secondary/90 transition-all"
+            >
               Sponsor a Child
             </button>
-            <button className="bg-white text-primary px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all">
+            <button
+              onClick={() => { window.location.href = "/donate" }}
+              className="bg-white hover:cursor-pointer text-primary px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all"
+            >
               Donate Now
             </button>
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 
