@@ -44,9 +44,10 @@ const ContactPage = () => {
       } else {
         toast.error("Failed to send message. Please try again later.");
       }
-    } catch (error) {
-      console.error("Contact form error:", error);
-      toast.error("An error occurred. Please check your connection.");
+    } catch (error: any) {
+      console.log("Contact form error:", error);
+      const errorMessage = error.response?.data?.error || "An error occurred. Please check your connection.";
+      toast.error(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
@@ -206,9 +207,8 @@ const ContactPage = () => {
                   </label>
                   <textarea
                     {...register("message")}
-                    className={`w-full min-h-[150px] p-4 rounded-lg border focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary ${
-                      errors.message ? "border-red-500" : "border-gray-200"
-                    }`}
+                    className={`w-full min-h-[150px] p-4 rounded-lg border focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary ${errors.message ? "border-red-500" : "border-gray-200"
+                      }`}
                     placeholder="Write your message here..."
                   ></textarea>
                   {errors.message && (

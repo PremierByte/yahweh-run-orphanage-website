@@ -15,7 +15,7 @@ export const companyInfo = {
 
 export const contactInfo = {
   email: "info@yahwehrunorphanage.org",
-  phones: ["+234 915 964 3315"],
+  phones: ["+234 915 964 3315", "+234 915 334 9838"],
   locations: [
     {
       label: "Yahweh Run Orphanage Foundation",

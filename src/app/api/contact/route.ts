@@ -3,12 +3,31 @@ import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   try {
+    const body = await req.json();
+
+    if (!body) {
+      return NextResponse.json(
+        { success: false, error: "Missing request body" },
+        { status: 400 },
+      );
+    }
+
     const {
       fullname,
       email,
       subject,
       message,
-    } = await req.json();
+    } = body;
+
+    if (!fullname || !email || !message ||
+      typeof fullname !== "string" ||
+      typeof email !== "string" ||
+      typeof message !== "string") {
+      return NextResponse.json(
+        { success: false, error: "Required fields are missing or invalid" },
+        { status: 400 },
+      );
+    }
 
     // 1. Dynamic UI Accents matching the gold and navy theme
     const primaryColor = "#1e3a8a"; // Navy
@@ -83,9 +102,11 @@ export async function POST(req: Request) {
       </html>
     `;
 
+    const fromEmail = process.env.SMTP_USER || "noreply@yahwehrunorphanage.org";
+
     // 3. Nodemailer Transmission Trigger
     await transporter.sendMail({
-      from: `"Yahweh Run Website" <${process.env.SMTP_USER}>`,
+      from: `"Yahweh Run Website" <${fromEmail}>`,
       to: "info@yahwehrunorphanage.org",
       replyTo: email,
       subject: subjectLine,
@@ -93,8 +114,14 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error("Critical contact message transmission exception:", error);
+  } catch (error: any) {
+    console.error("Critical contact message transmission exception:", {
+      message: error.message,
+      stack: error.stack,
+      code: error.code,
+      command: error.command,
+      response: error.response,
+    });
     return NextResponse.json(
       { success: false, error: "Internal processing disruption occurred." },
       { status: 500 },
