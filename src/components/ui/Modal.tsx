@@ -7,9 +7,10 @@ interface ModalProps {
   title: string;
   children?: ReactNode;
   size?: 'sm' | 'md' | 'lg' | 'xl';
+  overlayClassName?: string;
 }
 
-export default function Modal({ isOpen, onClose, title, children, size = 'md' }: ModalProps) {
+export default function Modal({ isOpen, onClose, title, children, size = 'md', overlayClassName }: ModalProps) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -51,7 +52,7 @@ export default function Modal({ isOpen, onClose, title, children, size = 'md' }:
     <div className="fixed inset-0 z-50 overflow-y-auto">
       <div className="flex min-h-screen items-center justify-center p-4">
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 transition-opacity"
+          className={`fixed inset-0 transition-opacity ${overlayClassName || 'bg-black bg-opacity-50'}`}
           onClick={onClose}
         />
 

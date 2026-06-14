@@ -17,7 +17,7 @@ export const navItems = [
       { name: "Volunteer", link: "/ways-to-help/volunteers" },
       {
         name: "Educational Support",
-        link: "/ways-to-help/education",
+        link: "/ways-to-help/educational-support",
       },
     ],
   },

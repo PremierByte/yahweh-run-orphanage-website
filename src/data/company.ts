@@ -9,12 +9,14 @@ export const companyInfo = {
   beliefs: `To Provide holistic care and protection (safe, stable, and suitable home-based placement) services to our kids within a supportive foster care system (by establishing and providing effective and reliable foster care services in the project community).`,
   image: "/images/about/about.jpg",
   websiteUrl: "https://yahwehrunorphanage.org",
-  developer: "PremierByte.NG",
+  developer: "PremierByte",
   developerWebsite: "https://premierbyte.ng/",
+  fraudAlert:
+    "BEWARE OF FRAUDSTERS DO NOT DONATE FUNDS INTO ANY PERSONAL ACCOUNT ON BEHALF OF OUR ORPHANAGE. PLEASE ONLY USE YAHWEH RUN ORPHANAGE FOUNDATION ACCOUNTS LISTED ON OUR DONATION PAGE OR DONATE ONLINE USING OUR SECURED PAYMENT PARTNER PAYSTACK.",
 };
 
 export const contactInfo = {
-  email: "info@yahwehrunorphanage.org",
+  emails: ["info@yahwehrunorphanage.org", "yahwehrunorphanage@gmail.com"],
   phones: ["+234 915 964 3315", "+234 915 334 9838"],
   locations: [
     {

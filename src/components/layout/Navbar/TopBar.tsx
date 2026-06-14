@@ -11,8 +11,8 @@ const TopBar = () => {
   };
 
   const handleEmailNow = () => {
-    if (contactInfo.email) {
-      window.location.href = `mailto:${contactInfo.email}`;
+    if (contactInfo.emails) {
+      window.location.href = `mailto:${contactInfo.emails[0]}`;
     }
   };
 
@@ -23,11 +23,11 @@ const TopBar = () => {
         <button
           onClick={handleEmailNow}
           className="flex items-center justify-center space-x-2 py-1 px-2 rounded-lg hover:bg-white/5 active:bg-white/10 transition-colors duration-150 group"
-          aria-label={`Email us at ${contactInfo.email}`}
+          aria-label={`Email us at ${contactInfo.emails[0]}`}
         >
           <Mail className="w-4 h-4 text-secondary/80 group-hover:scale-105 transition-transform" />
           <span className="text-xs md:text-sm font-medium tracking-wide">
-            {contactInfo.email}
+            {contactInfo.emails[0]}
           </span>
         </button>
 

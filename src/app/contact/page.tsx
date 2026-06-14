@@ -93,9 +93,11 @@ const ContactPage = () => {
                     <p className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-1">
                       Email Us
                     </p>
-                    <p className="text-xl font-bold text-primary">
-                      {contactInfo.email}
-                    </p>
+                    {contactInfo.emails.map((email, i) => (
+                      <p key={i} className="text-xl font-bold text-primary">
+                        {email}
+                      </p>
+                    ))}
                   </div>
                 </div>
 

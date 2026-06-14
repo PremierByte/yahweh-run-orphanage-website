@@ -1,6 +1,6 @@
 "use client";
 
-import { companyInfo } from "@/data/company";
+import { companyInfo, contactInfo } from "@/data/company";
 import { services } from "@/data/services";
 import {
   Mail,
@@ -90,12 +90,19 @@ const Footer = () => {
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">
                     Call Us
                   </p>
-                  <a
-                    href="tel:+2349159643315"
-                    className="text-sm font-bold hover:text-secondary transition-colors"
-                  >
-                    +234 915 964 3315
-                  </a>
+
+                  {contactInfo.phones.map((phone, i) => (
+                    <>
+                      <a key={i}
+                        href="tel:+2349159643315"
+                        className="text-sm font-bold hover:text-secondary transition-colors"
+                      >
+                        {phone}
+                      </a><br />
+                    </>
+                  ))}
+
+
                 </div>
               </li>
               <li className="flex items-start gap-4 group">
@@ -107,10 +114,10 @@ const Footer = () => {
                     Email Us
                   </p>
                   <a
-                    href="mailto:info@yahwehrunorphanage.org"
-                    className="text-sm font-bold hover:text-secondary transition-colors truncate block max-w-[180px]"
+                    href={`mailto:${contactInfo.emails[0]}`}
+                    className="text-sm font-bold hover:text-secondary transition-colors truncate block"
                   >
-                    info@yahwehrunorphanage.org
+                    {contactInfo.emails[0]}
                   </a>
                 </div>
               </li>
@@ -123,7 +130,7 @@ const Footer = () => {
                     Location
                   </p>
                   <span className="text-sm font-bold leading-tight block">
-                    Benin City, Edo State, Nigeria
+                    {contactInfo.locations[0].address}
                   </span>
                 </div>
               </li>
@@ -147,7 +154,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 };
 
