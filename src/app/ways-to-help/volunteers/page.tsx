@@ -49,8 +49,8 @@ const VolunteersPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
             <div>
               <Image
-                src="/images/volunteerhappy.png"
-                alt="Volunteers with Children"
+                src="/images/family-traveling-together-through-woods.jpg"
+                alt="Family traveling together through woods"
                 width={600}
                 height={400}
                 className="rounded-[3rem] shadow-2xl"
@@ -145,7 +145,7 @@ const VolunteersPage = () => {
               </div>
               <div>
                 <h4 className="font-bold text-primary">Email Your Form</h4>
-                <p className="text-gray-600">{contactInfo.email}</p>
+                <p className="text-gray-600">{contactInfo.emails[0]}</p>
               </div>
             </div>
             <div className="flex gap-6 items-center p-8 bg-white rounded-3xl shadow-sm border border-gray-100">

@@ -128,6 +128,57 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* Accreditation & Legal Status */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl font-bold text-primary mb-6">
+              Accreditation & Legal Status
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              Yahweh Run Orphanage Foundation is a fully registered and
+              accredited non-profit organization in Nigeria. We are committed to
+              operating with the highest standards of transparency and legal
+              compliance.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div className="group space-y-4">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-3xl border border-gray-100 shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:border-secondary/20">
+                <Image
+                  src="/images/certificate/certificate-of-incorporation.jpeg"
+                  alt="Certificate of Incorporation"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-500" />
+              </div>
+              <h3 className="text-xl font-bold text-primary">
+                Certificate of Incorporation
+              </h3>
+              <p className="text-sm text-gray-500">Corporate Affairs Commission (CAC)</p>
+            </div>
+
+            <div className="group space-y-4">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-3xl border border-gray-100 shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:border-secondary/20">
+                <Image
+                  src="/images/certificate/certificate-of-registration.jpeg"
+                  alt="Certificate of Registration"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-500" />
+              </div>
+              <h3 className="text-xl font-bold text-primary">
+                Certificate of Registration
+              </h3>
+              <p className="text-sm text-gray-500">Special Control Unit Against Money Laundering (SCUML)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <CTA />
     </main>
   );
